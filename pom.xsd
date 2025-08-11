@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="project">
+		<xs:complexType>
+			<xs:sequence minOccurs="0">
+				<xs:element name="modelVersion" minOccurs="0" type="xs:string" />
+				<xs:element name="parent" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="groupId" type="xs:string" />
+							<xs:element name="artifactId" type="xs:string" />
+							<xs:element name="version" type="xs:string" />
+							<xs:element name="relativePath" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="groupId" minOccurs="0" type="xs:string" />
+				<xs:element name="artifactId" minOccurs="0" type="xs:string" />
+				<xs:element name="version" minOccurs="0" type="xs:string" />
+				<xs:element name="name" minOccurs="0" type="xs:string" />
+				<xs:element name="description" minOccurs="0" type="xs:string" />
+				<xs:element name="url" minOccurs="0" />
+				<xs:element name="licenses" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="license" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="developers" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="developer" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="scm" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="connection" />
+							<xs:element name="developerConnection" />
+							<xs:element name="tag" />
+							<xs:element name="url" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="properties" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="java.version" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="dependencies" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="dependency" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="groupId" type="xs:string" />
+										<xs:element name="artifactId" type="xs:string" />
+										<xs:element name="scope" minOccurs="0" type="xs:string" />
+										<xs:element name="version" minOccurs="0" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="build" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="plugins">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="plugin" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="groupId" type="xs:string" />
+													<xs:element name="artifactId" type="xs:string" />
+													<xs:element name="configuration">
+														<xs:complexType>
+															<xs:sequence minOccurs="0">
+																<xs:element
+																	name="annotationProcessorPaths"
+																	minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="path">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element
+																							name="groupId"
+																							type="xs:string" />
+																						<xs:element
+																							name="artifactId"
+																							type="xs:string" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="excludes"
+																	minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element
+																				name="exclude">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element
+																							name="groupId"
+																							type="xs:string" />
+																						<xs:element
+																							name="artifactId"
+																							type="xs:string" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
