@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "Users")
+@Table(name = "Categories")
 
 
 public class Category {

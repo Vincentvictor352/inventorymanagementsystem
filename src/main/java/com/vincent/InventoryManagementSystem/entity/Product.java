@@ -9,12 +9,14 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Builder
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "Products")
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -24,7 +26,7 @@ public class Product {
 
     @NotBlank(message = "SKU is required")
     @Column(unique = true)
-    private String SKU;
+    private String sku;
 
     @Positive(message = "Product price must be a positive value")
     private BigDecimal price;
@@ -43,12 +45,14 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
+
+
     @Override
     public String toString() {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", SKU='" + SKU + '\'' +
+                ", SKU='" + sku + '\'' +
                 ", price=" + price +
                 ", stockQuantity=" + stockQuantity +
                 ", description='" + description + '\'' +
